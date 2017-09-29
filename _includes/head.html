@@ -117,4 +117,9 @@
   <meta name="twitter:image" content="{{ site.url }}{{ site.avatar }}" />
   {% endif %}
 
+  <!-- To see this value locally, do JEKYLL_ENV=production jekyll build --> 
+	{% if jekyll.environment == 'production' %}
+		{% include analytics.html %}
+	{% endif %}
+	
 </head>
