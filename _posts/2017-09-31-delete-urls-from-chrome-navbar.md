@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Selectively delete past URLs from Chrome navigation bar
-subtitle: Selectively clear history
+title: Delete URL history from Chrome
+subtitle: Selectively clear URLs that you don't want showing up when typing in Chrome's navigation bar
 published: true
 tags: technology
 ---
