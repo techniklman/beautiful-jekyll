@@ -17,7 +17,7 @@ baseurl: ""
 title: Technikl
 
 # Short description of your site
-description: Scratch that tech itch
+description: Answers to questions - How do I do that?
 
 # --- Navigation bar options --- #
 
@@ -226,3 +226,4 @@ gems:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-seo-tag
