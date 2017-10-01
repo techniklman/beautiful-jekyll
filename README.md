@@ -242,3 +242,9 @@ If you do fork or clone this project to use as a template for your site, I would
 	http://feeds.feedburner.com/technikl
 - Submit to Blog Directories - http://www.toprankblog.com/rss-blog-directories/
 	http://technorati.com/
+	
+SSL
+https://hackernoon.com/set-up-ssl-on-github-pages-with-custom-domains-for-free-a576bdf51bc
+
+DNS Records (have DNS updates propagated?)
+https://www.whatsmydns.net/#A/technikl.com
