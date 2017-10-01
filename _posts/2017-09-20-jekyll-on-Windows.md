@@ -50,8 +50,11 @@ gem install bundler
 
 If you are using GitHub pages to host your site, you need to make sure the Jekyll plugins you use are supported by GitHub Pages. Verify this at [GitHub Pages gem](https://github.com/github/pages-gem). Refer to the relevant [GitHub](https://help.github.com/articles/configuring-jekyll/) page on this too.
 
-{: .box-note}
-**Optional:** Install other gems such has rouge if you wish to use code highlighting. 
+
+
+{: .box-warning}
+**On Use with Github Pages Gem:** The Github Pages gem ignores all plugins included in the Gemfile. If you only include a plugin say, `jekyll-sitemap` in the Gemfile without also including it in the `_config.yml` the plugin will not work. This can be confusing because the official Jekyll docs state that plugins can be included in either the Gemfile or `_config.yml`.
+
 
 ## Build the site
 
