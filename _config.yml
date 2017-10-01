@@ -55,7 +55,7 @@ avatar: "/img/avatar-icon.png"
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Admin
+  name: Joseph
   email: "admin@technikl.com"
   facebook: yourname  # eg. daattali
   github: yourname    # eg. daattali
@@ -224,5 +224,5 @@ prose:
 
 gems:
   - jekyll-paginate
-# Beautiful Jekyll / Dean Attali
-# 2fc73a3a967e97599c9763d05e564189
+  - jekyll-sitemap
+  - jekyll-feed

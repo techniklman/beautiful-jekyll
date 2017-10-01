@@ -48,7 +48,7 @@ gem install jekyll
 gem install bundler
 ```
 
-
+If you are using GitHub pages to host your site, you need to make sure the Jekyll plugins you use are supported by GitHub Pages. Verify this at [GitHub Pages gem](https://github.com/github/pages-gem). Refer to the relevant [GitHub](https://help.github.com/articles/configuring-jekyll/) page on this too.
 
 {: .box-note}
 **Optional:** Install other gems such has rouge if you wish to use code highlighting. 
@@ -86,10 +86,16 @@ Navigate to the URL shown and you should see the static site:
 
 ![image](https://user-images.githubusercontent.com/327990/31007020-a22774de-a531-11e7-85a5-96586294edc4.png)
 
-You can update your gems once a while using
+You can update your bundle & gems once a while using
 
 ```
 gem update
+```
+
+or if Bundler is installed, run
+
+```
+bundle update
 ```
 
 And that's it! 
