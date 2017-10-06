@@ -22,3 +22,9 @@ https://www.whatsmydns.net/#A/technikl.com
 
 ## Pull Updates
 https://github.com/techniklman/techniklman.github.io/compare/master...daattali:master
+
+## Google Search Console
+https://www.google.com/webmasters/tools/dashboard
+
+## Google Custom Search
+https://cse.google.com/cse/all
