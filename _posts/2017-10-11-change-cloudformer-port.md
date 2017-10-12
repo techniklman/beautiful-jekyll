@@ -18,15 +18,15 @@ Once the stack is created, on the Outputs tab in CloudFormation, you can see the
 
 ![image](https://user-images.githubusercontent.com/32394146/31494006-20c9e518-af84-11e7-96a1-a5be2b8d5624.png)
 
-If you try to access this, it doesn't work. The reason is due to China regulations, the default web application ports of 80 and 443 are blocked. So how do we access CloudFormer to generate our stack? Well, we change the default port for our application from 443 to another one, say 8443. To do so, we'd need to ssh into the EC2 instance, change the ports and we should be good. Right? Well, it wasn't that easy. 
+If you try to access this, it doesn't work. The reason is due to China regulations, the default web application ports of 80 and 443 are [blocked](https://forums.aws.amazon.com/thread.jspa?threadID=173724). So how do we access CloudFormer to generate our stack? Well, we change the default port for our application from 443 to another one, say 8443. To do so, we'd need to ssh into the EC2 instance, change the ports and we should be good. Easy, right? Well, not quite.
 
 # Add SSH Key to EC2 machine
-First, what is the SSH key associated with this isntance? Well it seems there are no keys associated with this instance - because the creators of this template didn't need to provide one. There's no need to. But we need access. So we'd need to find a way to add a key to an existing EC2 instance. Researching this line - it seemed a bit or work. An easier way would be if we clould have the CloudFormer template to associate a key with the EC2 instance while it was creating this stack. 
+First, what is the SSH key associated with this instance? Well it seems there are no keys associated with this instance - because the creators of this template didn't need to provide one. There's no need to, but we need access. So we'd need to find a way to add a key to an existing EC2 instance. Researching this line - it seemed a bit of work. An easier way would be if we could have the CloudFormer template to associate a key with the EC2 instance while it was creating this stack. 
 
 ## Edit the CloudFormer template
 
 {: .box-note}
-**Note:** You can just download the edited CloudFormation template from [this pastebin](https://pastebin.com/5fY5bAdb) or follow the steps below:
+**Note:** You can skip this section and download the edited CloudFormation template from [this pastebin](https://pastebin.com/5fY5bAdb). If you're interested on the how, read on:
 
 Grab the template JSON from the Template tab.
 
@@ -67,11 +67,11 @@ And generate a new stack by pointing to this edited template
 
 # Add Incoming ports to Security Group
 
-Now before logging in you need to add incoming port 22 to the Security Group the EC2 is part of. You can find this out, but clicking through 
+Now before logging in you need to add incoming port 22 to the Security Group the EC2 is part of. You can find this out, by clicking: 
 
 ![image](https://user-images.githubusercontent.com/32394146/31494921-f128d31a-af87-11e7-9615-5ae5a3b8805f.png)
 
-Edit to add port 22 Inbound from your IP 
+Edit to add port 22 Inbound from your IP (rather than 0.0.0.0/0)
 
 
 # Login to the EC2 to change Ports
@@ -80,11 +80,11 @@ You now have an EC2 machine with a key to login to.
 
 ![image](https://user-images.githubusercontent.com/32394146/31494774-6d181180-af87-11e7-9ad1-450fb219a564.png)
 
-Now, I had no idea what webserver this was on, it wasn't Apache. Looking at `htop` I see 
+Now, I had no idea what webserver this was on, it wasn't Apache. Looking at `htop` for anything LISTENing on port 443 we see 
 
 ![image](https://user-images.githubusercontent.com/32394146/31495634-f8e8a10e-af8a-11e7-9870-2af8188b5dd7.png)
 
-this provides a clue. Googling for "thin server", I see that it's a Ruby webserver. Since this starts up with the server, we look at `/etc/rc.d/rc.local` to see the command that starts the server. We get:
+this provides a clue. Googling for "thin server", I see that it's a Ruby webserver. Since this starts up with the server, we look at `/etc/rc.d/rc.local` (this script file is run once, before all other scripts have run but before the logon prompt appears) to see the command that starts the Ruby webserver. We get:
 
 ```bash
 [ec2-user@ip-172-31-4-114 ~]$ more /etc/rc.d/rc.local
@@ -107,12 +107,12 @@ cd /home/ec2-user/cloudformer
 /usr/local/bin/thin start -p 443 -e production -d --ssl --ssl-key-file /home/ec2-user/cloudformer/.ssl/server.key --ssl-cert-file /home/ec2-user/cloudformer/.ssl/server.crt
 ```
 
-We've finally reached the place where the port is specificed. We can see it's 443 above. Hence, we edit `/usr/bin/cloudformer` to change it to a port, say 8443. Now as before, edit your Security Group to add this port in the Incoming port section.
+We've finally reached the place where the port is specified! We can see that it's **443**. Hence, we edit `/usr/bin/cloudformer` to change it to a port, say 8443. Now as before, edit your Security Group to add this port in the Incoming port section.
 
 ![image](https://user-images.githubusercontent.com/32394146/31495922-ffd1bc16-af8b-11e7-9ecf-322b823b819f.png)
 
 ## Access AWS CloudFormer
 
-Reboot the EC2 instance and access the URL like so: `https://<your_ec2_hostname>:8443/`. You do get a certificate error, but ignore and proceed. You can now create a CloudFormation template of your environment.
+Reboot the EC2 instance and access the URL like so: `https://<your_ec2_hostname>:8443/`. You do get a certificate error, but ignore and proceed. You can now create a CloudFormation template of your environment!
 
 ![image](https://user-images.githubusercontent.com/32394146/31496323-83f7854c-af8d-11e7-8b30-f29c3c8623b4.png)
