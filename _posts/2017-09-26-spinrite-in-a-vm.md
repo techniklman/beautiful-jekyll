@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Run SpinRite from a VM
+title: Run SpinRite from a Virtual Machine (VM)
 subtitle: How to run SpinRite in a VM testing multiple disks at once
 published: true
 tags: technology
