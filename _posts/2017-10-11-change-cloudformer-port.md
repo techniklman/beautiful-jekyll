@@ -80,11 +80,11 @@ You now have an EC2 machine with a key to login to.
 
 ![image](https://user-images.githubusercontent.com/32394146/31494774-6d181180-af87-11e7-9ad1-450fb219a564.png)
 
-Now, I had no idea what webserver this was on, it wasn't Apache. Looking at `htop` for anything LISTENing on port 443 we see 
+Now, I had no idea what webserver this was on, it wasn't Apache. Looking at [htop](https://en.wikipedia.org/wiki/Htop) for services LISTENing on port 443 we see 
 
 ![image](https://user-images.githubusercontent.com/32394146/31495634-f8e8a10e-af8a-11e7-9870-2af8188b5dd7.png)
 
-this provides a clue. Googling for "thin server", I see that it's a Ruby webserver. Since this starts up with the server, we look at `/etc/rc.d/rc.local` (this script file is run once, before all other scripts have run but before the logon prompt appears) to see the command that starts the Ruby webserver. We get:
+This provides a clue - "thin server". Googling for "thin server", I see that it's a [Ruby webserver](https://github.com/macournoyer/thin). Since this auto starts with the EC2 server, we look at `/etc/rc.d/rc.local` (this script file is run once, before all other scripts have run but before the logon prompt appears) to see the command that starts the Ruby webserver. We see:
 
 ```bash
 [ec2-user@ip-172-31-4-114 ~]$ more /etc/rc.d/rc.local
@@ -98,7 +98,7 @@ touch /var/lock/subsys/local
 /usr/bin/cloudformer
 ```
 
-Listing out the startup script, we see:
+Looking at the contents of the startup script `/usr/bin/cloudformer`, we see:
 
 ```bash
 [ec2-user@ip-172-31-4-114 ~]$ more /usr/bin/cloudformer
