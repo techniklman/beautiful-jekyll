@@ -31,13 +31,13 @@ Point to the SpinRite ISO.
 
 ![virtualbox_2017-09-29_13-00-04](https://user-images.githubusercontent.com/327990/31001459-6584f594-a516-11e7-8232-2e59f70fc278.png)
 
-## Detach the disk
+## Identify and Detach disk
 
 Attach the disk (you with to scan) to your machine and open Disk Management. Identify your Disk #.
 
 ![image](https://user-images.githubusercontent.com/327990/30996101-b56ab358-a4f0-11e7-8eaa-05049466a4b1.png)
 
-In the example above, it's 2. Note this. Now, we need to detach the disk from Windows. Run an elevated command prompt (as Administrator), then run "diskpart".  You'll enter the diskpart shell and then issue these commands. 
+In the example above, it's 2. Note this. Now, we need to detach the disk from Windows. Run an elevated command prompt (as Administrator), then run `diskpart`.  You'll enter the diskpart shell and then issue these commands. 
 
 ~~~
 list disk
