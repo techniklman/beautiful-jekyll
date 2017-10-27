@@ -3,10 +3,13 @@ layout: post
 title: Update Windows 10 Enterprise to 1709 (Fall Creators Update)
 subtitle: Manually update Windows 10 Enterprise
 published: true
-tags: technology
+tags: [technology,windows]
 ---
 
-So Microsoft released version [1709](https://docs.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1709) also called Fall Creators Update. This post deals with how to upgrade Enterprise editions of Windows to 1709 since Microsoft doesn't push the version 1709 to Enterprise editions. If you are running the latest version of Windows Enterprise (as of this writing) you should be on version 1703. Verify this checking in *About your PC* 
+So Microsoft released version [1709](https://docs.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1709), also called Fall Creators Update. This post deals with how to upgrade Enterprise editions of Windows to 1709 since Microsoft doesn't push the version 1709 to Enterprise editions. Yet. If you are running the latest version of Windows Enterprise (as of this writing) you should be on version 1703. Verify this checking in *About your PC* 
+
+{: .box-note}
+**Note:** This post may be moot or inconsequential at a later date when Microsoft pushes this update to Windows 10 Enterprise editions. It is valid at the time of writing.
 
 ![image](https://user-images.githubusercontent.com/32394146/32054698-e3bb957c-ba91-11e7-8bd0-3c48b5d455b7.png)
 
@@ -14,7 +17,8 @@ So Microsoft released version [1709](https://docs.microsoft.com/en-us/windows/wh
 
 If you check for Windows Updates, it doesn't offer an update to 1709. So how do we do it? 
 
-# Download from MSDN Downloads
+# Upgrade Windows 10 Enterprise
+
 Download the 1709 update from your MSDN subscriptions. Select the version titled **Windows 10 (multi-edition) VL, Version 1709 (Updated Sept 2017)**. The downloaded ISO is  named *en_windows_10_multi-edition_vl_version_1709_updated_sept_2017_x64_dvd_100090741.iso*
 ![image](https://user-images.githubusercontent.com/32394146/32055132-79cd40dc-ba93-11e7-8eaf-80b981c9e47d.png)
 
@@ -35,7 +39,9 @@ The one feature I wanted was the *[OneDrive Files On-Demand](https://support.off
 
 ![image](https://user-images.githubusercontent.com/32394146/32060322-ff34bb6c-baa0-11e7-9afb-b608655c6d8d.png)
 
-The rest of my applications, folders, settings are all intact! The upgrade does create a ~23 GB folder `Windows.old` folder in your C:\ drive
+# Cleanup installation files
+
+As expected, the rest of my applications, folders, settings are all intact. The upgrade does create a ~23 GB folder `Windows.old` folder in your C:\ drive
 
 ![image](https://user-images.githubusercontent.com/32394146/32060695-28590cb8-baa2-11e7-8413-0cc3151ca282.png)
 
