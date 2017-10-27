@@ -13,13 +13,13 @@ So Microsoft released version [1709](https://docs.microsoft.com/en-us/windows/wh
 
 ![image](https://user-images.githubusercontent.com/32394146/32054698-e3bb957c-ba91-11e7-8bd0-3c48b5d455b7.png)
 
-![image](https://user-images.githubusercontent.com/32394146/32054838-58b0d400-ba92-11e7-9891-4e1589baa907.png)
+![image](https://user-images.githubusercontent.com/32394146/32083513-ac941704-baf5-11e7-9fac-0294dcfe6541.png)
 
 If you check for Windows Updates, it doesn't offer an update to 1709. So how do we do it? 
 
 # Upgrade Windows 10 Enterprise
 
-Download the 1709 update from your MSDN subscriptions. Select the version titled **Windows 10 (multi-edition) VL, Version 1709 (Updated Sept 2017)**. The downloaded ISO is  named *en_windows_10_multi-edition_vl_version_1709_updated_sept_2017_x64_dvd_100090741.iso*
+Download the 1709 update from your MSDN Subscriptions. Select the version titled **Windows 10 (multi-edition) VL, Version 1709 (Updated Sept 2017)**. The downloaded ISO is  named *en_windows_10_multi-edition_vl_version_1709_updated_sept_2017_x64_dvd_100090741.iso*
 ![image](https://user-images.githubusercontent.com/32394146/32055132-79cd40dc-ba93-11e7-8eaf-80b981c9e47d.png)
 
 Mount this in Windows 10 and run setup.
