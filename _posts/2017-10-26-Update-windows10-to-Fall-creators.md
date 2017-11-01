@@ -1,3 +1,4 @@
+
 ---
 layout: post
 title: Update Windows 10 Enterprise to 1709 (Fall Creators Update)
@@ -38,6 +39,10 @@ After about 20 mins or so of installation and a few restarts, we're now on 1709!
 The one feature I wanted was the *[OneDrive Files On-Demand](https://support.office.com/en-us/article/Learn-about-OneDrive-Files-On-Demand-0e6860d3-d9f3-4971-b321-7092438fb38e?ui=en-US&rs=en-US&ad=US)* feature. This is enabled ONLY if you are on Windows version 1709 - which I now am!
 
 ![image](https://user-images.githubusercontent.com/32394146/32060322-ff34bb6c-baa0-11e7-9afb-b608655c6d8d.png)
+
+The folder here is 627MB but only occupies 28KB on disk 
+![image](https://user-images.githubusercontent.com/32394146/32259105-8a92e7a6-bf01-11e7-9da0-6fffab58aec8.png)
+
 
 # Cleanup installation files
 
