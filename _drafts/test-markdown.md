@@ -3,7 +3,7 @@ layout: post
 title: Test markdown
 subtitle: Each post also has a subtitle
 bigimg: /img/path.jpg
-published: false
+published: true
 categories: Test
 ---
 {: .box-warning}
