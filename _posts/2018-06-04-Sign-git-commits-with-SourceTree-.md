@@ -55,7 +55,7 @@ Now import the two keys:
 
 ## Configure SourceTree to Sign all requests
 
-Set git to sign all commits by the following command. 
+Set git to sign all commits with the following command:
 
 `git config commit.gpgsign true`
 
@@ -83,7 +83,7 @@ We now need to specify WHAT key to use to sign (there may be many keys in the GP
 
 As above, you can issue this command local to a repo or globally by adding the `--global` flag.
 
-The corresponding config file will be edited to add the key (say, <keyID> = 25FA525E)
+The corresponding config file will be edited to add the key (say, &lt;keyID&gt; = 25FA525E)
 
 ```
 [user]
